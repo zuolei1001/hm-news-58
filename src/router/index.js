@@ -12,9 +12,9 @@ const router = new VueRouter({
   // 配置路由规则
   routes: [
     { path: '/', redirect: '/login' },
-    { path: '/login', component: Login },
-    { path: '/register', component: Register },
-    { path: '/user', component: User }
+    { path: '/login', component: Login, name: 'login' },
+    { path: '/register', component: Register, name: 'register' },
+    { path: '/user', component: User, name: 'password' }
   ]
 });
 

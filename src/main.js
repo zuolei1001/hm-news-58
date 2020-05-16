@@ -25,8 +25,8 @@ Vue.component('hm-logo', HmLogo);
 Vue.component('hm-button', HmButton);
 Vue.component('hm-input', HmInput);
 
-Vue.prototype.$axios = axios;
 axios.defaults.baseURL = 'http://localhost:3000';
+Vue.prototype.$axios = axios;
 
 import { Toast } from 'vant';
 Vue.use(Toast);
