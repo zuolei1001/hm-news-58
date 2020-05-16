@@ -9,10 +9,29 @@ import './styles/iconfont.css';
 import 'lib-flexible';
 // 导入路由对象
 import router from './router';
+// 导入axios
+import axios from 'axios';
 
 Vue.config.productionTip = false;
 
+// ------------------------全局注册组件----------------------------
+import HmHeader from './components/HmHeader.vue';
+import HmLogo from './components/HmLogo.vue';
+import HmButton from './components/HmButton.vue';
+import HmInput from './components/HmInput.vue';
+
+Vue.component('hm-header', HmHeader);
+Vue.component('hm-logo', HmLogo);
+Vue.component('hm-button', HmButton);
+Vue.component('hm-input', HmInput);
+
+Vue.prototype.$axios = axios;
+axios.defaults.baseURL = 'http://localhost:3000';
+
+import { Toast } from 'vant';
+Vue.use(Toast);
+
 new Vue({
   router,
-  render: (h) => h(App),
+  render: h => h(App)
 }).$mount('#app');
